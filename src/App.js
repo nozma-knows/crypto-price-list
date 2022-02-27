@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import AddCommas from "./utils/AddCommas";
+// import FetchCryptoData from "./utils/FetchCryptoData";
 
 import "./App.css";
 
