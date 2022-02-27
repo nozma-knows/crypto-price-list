@@ -2,18 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import AddCommas from "./utils/AddCommas";
+// import FetchCryptoData from "./utils/FetchCryptoData";
 
 import "./App.css";
 
-const baseURL =
-  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false";
-
-// Puts commas in numbers
-// const numberWithCommas = (number) => {
-//   const parts = number.toString().split(".");
-//   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//   return parts.join(".");
-// };
+const cryptoAPI = process.env.REACT_APP_CRYPTO_API;
 
 export default function App() {
   const [result, setResult] = useState([]);
@@ -25,7 +18,7 @@ export default function App() {
   const fetchData = async () => {
     const list = [];
     try {
-      await axios.get(baseURL).then((response) => {
+      await axios.get(cryptoAPI).then((response) => {
         for (var i in response.data) {
           list.push(response.data[i]);
         }
