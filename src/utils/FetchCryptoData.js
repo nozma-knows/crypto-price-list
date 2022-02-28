@@ -2,7 +2,7 @@ import axios from "axios";
 
 const cryptoAPI = process.env.REACT_APP_CRYPTO_API;
 
-export default async function FetchCryptoPrices(setData) {
+export default async function FetchCryptoData(setData) {
   const list = [];
   try {
     await axios.get(cryptoAPI).then((response) => {

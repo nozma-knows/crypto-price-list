@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import FetchCryptoPrices from "../utils/FetchCryptoData";
+import FetchCryptoData from "../utils/FetchCryptoData";
 
 export default function CryptoList() {
   const [data, setData] = useState(null);
+  const [sortBy, setSortBy] = useState("market_cap_rank");
 
   // Fetch and set data
   useEffect(() => {
-    FetchCryptoPrices(setData);
+    FetchCryptoData(setData);
   }, []);
 
   // Temporary - Log data
